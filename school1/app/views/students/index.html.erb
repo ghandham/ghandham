@@ -1,0 +1,29 @@
+<h1>displaying all</h1>
+<%= link_to "create new Student",new_student_path %>
+<table>
+	<tr>
+		<th>name</th>
+		<th>age</th>
+		<th>email</th>
+		<th>qualification</th>
+		<th>link to edit </th>
+		<th>link to show </th>
+
+
+	</tr>
+	<% @students.each do |f| %>
+     <tr>
+		<td><%= f.name %></td>
+		<td><%= f.age %></td>
+		<td><%= f.mail %></td>
+		<td><%= f.qualification %></td>
+		<td><%= link_to "edit", edit_student_path(f) %></td>
+		<td><%= link_to "show", student_path(f) %></td>
+		<td><%= link_to "delete", student_path(f), method: :delete %></td>
+
+
+	   </tr>
+
+
+	<% end %>
+	</table>

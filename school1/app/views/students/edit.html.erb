@@ -1,0 +1,26 @@
+<h1>welcome to edit </h1>
+<% if @student.errors.any? %>
+<ul>
+<% @students.errors.fully_message.each do |msg| %>
+<li><%= msg %></li>
+<% end %></ul>
+<% end %>
+
+<%= form_for @student do |f| %>
+		<p>
+<%= f.label :name %>
+<%= f.text_field :name %></br>
+<%= f.label :age %>
+<%= f.text_field :age %></br>
+<%= f.label :mail %>
+<%= f.text_field :mail %></br>
+<%= f.label :qualification %>
+<%= f.text_field :qualification %></br>
+
+<%= f.submit %>
+
+		</p>
+
+<% end %>
+<%= link_to "back to index" , students_path %>
+
